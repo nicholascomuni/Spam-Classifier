@@ -1,10 +1,11 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
+from flask_restful import Api, Resource
 import pickle as pkl
 
 with open("teste.pkl",'rb') as file:
     transformer,classifier = pkl.load(file)
-    
+
 def predict_message(message):
     return classifier.predict(transformer.transform([message]))
 
@@ -28,6 +29,6 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
-    
+
+
 print(__name__)
