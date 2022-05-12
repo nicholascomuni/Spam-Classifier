@@ -63,11 +63,18 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- GETTING STARTED -->
 ## Getting Started
+
+The first step is create a virtual environment
+```sh
+  virtualenv venv
+  ```
+  
+### Prerequisites
 There are two ways to install the project:
 * Running a container 
 * Installing the dependencies
 
-#### 1. Running a Container
+#### Running a container
 To run it with Docker just build the Dockerfile as follows:
 ```
   docker build -t "name of your image" .
@@ -77,7 +84,7 @@ And then, run:
   docker run -i -d -p 5000:5000 "name of your image"
   ```
   
-#### 2. Running Locally
+#### Running a container
 If you want to run it locally instead, do the following:
 ```
   git clone https://github.com/nicholascomuni/Spam-Classifier
@@ -89,9 +96,4 @@ Run the flask application:
   ```
   flask run --host 0.0.0.0
   ```
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Make a Post request with the email content to your host and you will get.
 
