@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_restful import Api, Resource, reqparse
 import pickle as pkl
 
-with open("teste.pkl",'rb') as file:
+with open("predictor.pkl",'rb') as file:
     transformer,classifier = pkl.load(file)
 
 def PredictSpamHam(content):
