@@ -18,7 +18,7 @@ api = Api(app)
 
 class PredictSpam(Resource):
     def get(self):
-        return: {"Hello":"HERO"}
+        return {"Hello":"HERO"}
         #args = PredParser.parse_args()
         #prediction = PredictSpamHam([args['content']])
         #return {'prediction': prediction[0]}
