@@ -1,34 +1,28 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_restful import Api, Resource
+from flask_restful import Api, Resource, reqparse
 import pickle as pkl
 
 with open("teste.pkl",'rb') as file:
     transformer,classifier = pkl.load(file)
 
-def predict_message(message):
-    return classifier.predict(transformer.transform([message]))
+def PredictSpamHam(content):
+    return classifier.predict(transformer.transform(content))
+
+PredParser = reqparse.RequestParser()
+PredParser.add_argument('content',type=str,required=True)
 
 app = Flask(__name__)
+api = Api(app)
 
+class PredictSpam(Resource):
+    def post(self):
+        args = PredParser.parse_args()
+        prediction = PredictSpamHam([args['content']])
+        return {'prediction': prediction[0]}
 
-@app.route('/')
-def home():
-    return "Hello !!"
+api.add_resource(PredictSpam,"/predict")
 
-@app.route('/predict',methods=['POST'])
-def predict():
-    """
-    Fazer uma função que vai pegar o request.json separado por mensagens
-    """
-    predicted = predict_message(request.data)[0]
-    """
-    Retorna um json separado por mensagens
-    """
-    return predicted
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-print(__name__)
