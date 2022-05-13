@@ -90,7 +90,7 @@ curl --location --request POST 'localhost:5000/predict' \
 
 <hr>
 
-![Usage example2](images/spamham2.png)
+![Usage example2](images/Spamham2.png)
 
 
 ## References
