@@ -21,7 +21,7 @@ In this project we are going to:
 * [Pandas](https://pandas.pydata.org/)
 * [Numpy](https://numpy.org/)
 * [Pickle](https://docs.python.org/3/library/pickle.html)
-* [Docker](https://nextjs.org/)
+* [Docker](https://www.docker.com/)
 
 
 
@@ -86,11 +86,11 @@ curl --location --request POST 'localhost:5000/predict' \
     "prediction": "ham"
 }
 ```
-![Usage example](spamham.png)
+![Usage example](images/Spamham.png)
 
 <hr>
 
-![Usage example2](spamham2.png)
+![Usage example2](images/spamham2.png)
 
 
 ## References
